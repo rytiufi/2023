@@ -14,3 +14,10 @@ jobs:
 
     - name: Build Solution
       run: msbuild studio_offline.sln /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v143
+      
+    - name: upload dll lol
+      uses: actions/upload-artifact@v4
+      with:
+        name: studio-offline-dll
+        # Tidk the path lolllllll
+        path: x64/Release/studio_offline.dll
