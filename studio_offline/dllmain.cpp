@@ -62,15 +62,15 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
             AllocConsole();
             freopen("CONIN$", "r", stdin);
             freopen("CONOUT$", "w", stdout);
-            printf("Starting Studio-Offline modified by nitro boyyy\n");
+            printf("Service Starting...\n");
             const auto addr = aob_scan(patterns::url_oncomponent);
             const auto trustcheck_addr = aob_scan(patterns::trustcheck);
             const auto httprequest_addr = aob_scan(patterns::HttpRequestURL);
             if (addr) {
                 MH_Initialize();
-                printf("idk from  0x%p\n", *addr);
-                printf("trust check woww: 0x%p\n", *trustcheck_addr);
-                printf("http request no trust line omg: 0x%p\n", *httprequest_addr);
+                printf("Access Key Read: Nitroboytuff\n");
+                printf("Initializing Roblox Web Service\n");
+                printf("Service Starting On Port 6767\n");
                 abcd = (fromcomponents_t)*addr;
 
                 MH_CreateHook(abcd, hook_test, reinterpret_cast<LPVOID*>(&original));
