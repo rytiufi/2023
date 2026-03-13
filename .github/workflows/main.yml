@@ -1,0 +1,16 @@
+name: build the fucking dll
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-2022 # wowww is for 2022 visual studio 😲😲😲
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Build Solution
+      run: msbuild studio_offline.sln /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v143
